@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+header {
+  background-color: rgb(188, 235, 243);
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  padding: 30px 10px;  
+  margin: 0 0 0 30px;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+  margin: 0 60px 40px 0;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  border: 1px solid rgb(245, 142, 95);
+  padding: 20px;
+  color: rgb(245, 142, 95);
+}
+
+.sign-up {
+  text-decoration: none;
+  color: rgb(245, 142, 95);
+  border: 1px solid rgb(245, 142, 95);
+  padding: 20px;
+}
+
+
+.main {
+  background: #f8f8f8;
+}
+
+.title-contents {
+  font-size: 20px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: rgb(6, 26, 202);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background-image: image-url('ponyosky-header01.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.title-contents p {
+  font-size: 30px;
+}
