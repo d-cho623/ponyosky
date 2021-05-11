@@ -5,10 +5,10 @@
   <ul class="lists-right">
     <%if user_signed_in?%>
       <li><%= link_to current_user.name, "#", class: "user-uid" %> </li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "index-btn" %> </li>
     <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up"%></li>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "index-btn" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "index-btn"%></li>
     <% end %>
   </ul>
   </div>
@@ -22,5 +22,29 @@
     </h2>
     <p>物品の購入申請をしよう！</p>
   </div>
+
+  <div class="tabs">
+  <input id="all" type="radio" name="tab_item" checked>
+  <label class="tab_item" for="all">承認待ち</label>
+  <input id="programming" type="radio" name="tab_item">
+  <label class="tab_item" for="programming">発注待ち</label>
+  <input id="design" type="radio" name="tab_item">
+  <label class="tab_item" for="design">納入待ち</label>
+  <div class="tab_content" id="all_content">
+    <div class="tab_content_description">
+      <p class="c-txtsp">承認待ちの内容がここに入ります</p>
+    </div>
+  </div>
+  <div class="tab_content" id="programming_content">
+    <div class="tab_content_description">
+      <p class="c-txtsp">発注待ちの内容がここに入ります</p>
+    </div>
+  </div>
+  <div class="tab_content" id="design_content">
+    <div class="tab_content_description">
+      <p class="c-txtsp">納入待ちの内容がここに入ります</p>
+    </div>
+  </div>
+</div>
   
 </div>

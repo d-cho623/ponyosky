@@ -27,32 +27,76 @@ h1 {
   margin: 0 60px 40px 0;
 }
 
-.login {
+.index-btn {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
-  border: 1px solid rgb(245, 142, 95);
-  padding: 20px;
-  color: rgb(245, 142, 95);
+  margin-top: 4vh;
+  border: 1px solid rgb(67, 127, 238);
+  color: #FFF;
+  background-color: rgb(67, 127, 238);
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1.4em;
+  text-decoration: none;
+  border-bottom: solid 5px #113fda;/*ボタン色より暗めに*/
+  border-right: solid 5px #113fda;/*ボタン色より暗めに*/
 }
 
-.sign-up {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  border: 1px solid rgb(245, 142, 95);
-  padding: 20px;
-  color: rgb(245, 142, 95);
+.index-btn:before {  
+  content: " ";
+  position: absolute;
+  bottom: -5px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-width: 0 6px 6px 0px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #FFF;
 }
 
-.logout {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  border: 1px solid rgb(245, 142, 95);
-  padding: 20px;
-  color: rgb(245, 142, 95);
+.login:after {  
+  content: " ";
+  position: absolute;
+  top: -1px;
+  right: -5px;
+  width: 0;
+  height: 0;
+  border-width: 0px 6px 6px 0px;
+  border-style: solid;
+  border-color: #FFF;
+  border-bottom-color: transparent;
 }
+
+.index-btn:active {
+  /*ボタンを押したとき*/
+  border:none;
+  -webkit-transform: translate(6px,6px);
+  transform: translate(6px,6px);
+}
+
+.index-btn:after, .index-btn:before {
+  content: none;/*ボタンを押すと線が消える*/
+}
+
+// .sign-up {
+//   text-decoration: none;
+//   line-height: 32px;
+//   margin-right: 3vw;
+//   border: 1px solid rgb(245, 142, 95);
+//   padding: 20px;
+//   color: rgb(245, 142, 95);
+// }
+
+// .logout {
+//   text-decoration: none;
+//   line-height: 32px;
+//   margin-right: 3vw;
+//   border: 1px solid rgb(245, 142, 95);
+//   padding: 20px;
+//   color: rgb(245, 142, 95);
+// }
 
 
 .main {
@@ -83,5 +127,61 @@ h1 {
   text-decoration: none;
   padding-right: 60px;
   font-size: 25px;
-  color: red;
+  color: rgb(67, 127, 238);
+}
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0 auto;}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/3);
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  background-color: #5ab4bd;
+  color: #fff;
 }

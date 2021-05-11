@@ -18,9 +18,8 @@
 
 | Column                  | Type       | Options                        |
 | ----------------------  | ------     | ----------------------------   |
-| applicant               | string     | null: false                    |
-| maker                   | text       | null: false                    |
-| name                    | integer    | null: false                    |
+| maker                   | string     | null: false                    |
+| name                    | string     | null: false                    |
 | number                  | integer    | null: false                    |
 | code                    | integer    | null: false                    |
 | quantity                | integer    | null: false                    |
