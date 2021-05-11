@@ -12,7 +12,7 @@ class User < ApplicationRecord
   belongs_to :workplace
 
   validates :name, presence: true, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'はスペースを空けず、全角(漢字、ひらがな、カタカナ)のみで入力してください'}
-  validates :uid, presence: true, format: {with: /\A[a-zA-Z0-9]+\z/}
+  validates :uid, uniqueness: true, presence: true, format: {with: /\A[a-zA-Z0-9]+\z/}
   validates :occupation_id, numericality: { other_than: 1 }
   # validates :workplace_id, numericality: { other_than: 1 }
   # validates :group, numericality: { other_than: 1 } 
