@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        uid: ユーザーID
+        occupation_id: 役職
