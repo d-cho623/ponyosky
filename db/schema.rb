@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2021_05_11_100753) do
     t.integer "number"
     t.integer "code"
     t.integer "quantity", null: false
-    t.string "unit", null: false
     t.integer "price", null: false
     t.integer "total_price", null: false
     t.string "trading_company"

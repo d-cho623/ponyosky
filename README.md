@@ -23,7 +23,6 @@
 | number                  | integer    | null: false                    |
 | code                    | integer    | null: false                    |
 | quantity                | integer    | null: false                    |
-| unit                    | string     | null: false                    |
 | price                   | integer    | null: false                    |
 | total_price             | integer    | null: false                    |
 | trading_company         | string     | null: false                    |

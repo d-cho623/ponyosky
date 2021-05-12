@@ -35,3 +35,24 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.item-destroy {
+  width: 100%;
+  background-color: #f53131;
+  color: #fff;
+  padding: 15px;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+}
+
+.item-edit {
+  width: 100%;
+  background-color: #2096f3;
+  color: #fff;
+  padding: 15px;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+  margin-right: 35px;
+}

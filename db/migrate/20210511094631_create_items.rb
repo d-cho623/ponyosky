@@ -6,7 +6,6 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :number
       t.integer :code
       t.integer :quantity, null: false
-      t.string :unit, null: false
       t.integer :price, null: false
       t.integer :total_price, null: false
       t.string :trading_company

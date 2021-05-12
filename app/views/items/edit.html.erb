@@ -1,11 +1,11 @@
 <%= render "shared/header"%>
 
-<%= form_with model: @item, url: items_path, class: 'item-main', local: true do |f| %>
+<%= form_with model: @item, local: true do |f| %>
 
   <div class="content">
-    <h1>新規購入申請フォーム</h1>
+    <h1>申請内容を編集する</h1>
     <%= render "shared/error_messages", model: f.object %>
-    <p>次のフォームに申請内容を入力してください</p>
+    <p>次のフォームに申請変更内容を入力してください</p>
     <div class="control">
       <label for="maker">メーカー <span class="required">必須</span></label>
       <%= f.text_field :maker, class:"input-default", id:"maker", placeholder:"例) 株式会社ABC", maxlength:"40" %>
@@ -54,7 +54,7 @@
       </div>
     </div>
     <div class="control">
-      <%= f.submit "新規申請" ,class:"login-btn" %>
+      <%= f.submit "変更内容を更新" ,class:"login-btn" %>
     </div>
   </div>
 <% end %>

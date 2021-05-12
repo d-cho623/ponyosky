@@ -5,7 +5,8 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :maker
     validates :name
-    validates :unit
+    validates :number_or_code
+    validates :trading_company_or_retrieval
   end
 
   with_options presence: true, numericality: { only_integer: true } do
@@ -14,7 +15,14 @@ class Item < ApplicationRecord
     validates :total_price
   end
 
-  validates :number, presence: true, if: -> { code.blank? }
-  validates :code, presence: true, if: -> { number.blank? }
 
+  private
+  def number_or_code
+    number.presence or code.presence
+  end
+
+  def trading_company_or_retrieval
+    trading_company.presence or retrieval.presence
+  end
+  
 end
