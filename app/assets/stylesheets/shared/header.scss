@@ -1,17 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-.second-header {
-  font-family: 'Dancing Script', cursive;
-  margin: 0;
-  width: 100%;
-  background-color: rgb(188, 235, 243);
-  padding: 33px 10px;
-}
 
-.second-h1 {
+.first-h1 {
+  font-family: 'Dancing Script', cursive;
+  padding: 8px 40px 0 40px;
   text-decoration: none;
   font-size: 40px;
   color: black;
   font-weight: bold;
   margin: 0 0 0 30px;
 }
+
+.first-header {
+  background-color: rgb(188, 235, 243);
+}
+
+
+
+.nav {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+  margin: 0 60px 40px 0;
+}
+
+.index-btn {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  margin-top: 4vh;
+  border: 1px solid rgb(67, 127, 238);
+  color: #FFF;
+  background-color: rgb(67, 127, 238);
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1.4em;
+  text-decoration: none;
+  border-bottom: solid 5px #113fda;/*ボタン色より暗めに*/
+  border-right: solid 5px #113fda;/*ボタン色より暗めに*/
+}
+
+.index-btn:before {  
+  content: " ";
+  position: absolute;
+  bottom: -5px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-width: 0 6px 6px 0px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #FFF;
+}
+
+.login:after {  
+  content: " ";
+  position: absolute;
+  top: -1px;
+  right: -5px;
+  width: 0;
+  height: 0;
+  border-width: 0px 6px 6px 0px;
+  border-style: solid;
+  border-color: #FFF;
+  border-bottom-color: transparent;
+}
+
+.index-btn:active {
+  /*ボタンを押したとき*/
+  border:none;
+  -webkit-transform: translate(6px,6px);
+  transform: translate(6px,6px);
+}
+
+.index-btn:after, .index-btn:before {
+  content: none;/*ボタンを押すと線が消える*/
+}
+
+// .sign-up {
+//   text-decoration: none;
+//   line-height: 32px;
+//   margin-right: 3vw;
+//   border: 1px solid rgb(245, 142, 95);
+//   padding: 20px;
+//   color: rgb(245, 142, 95);
+// }
+
+// .logout {
+//   text-decoration: none;
+//   line-height: 32px;
+//   margin-right: 3vw;
+//   border: 1px solid rgb(245, 142, 95);
+//   padding: 20px;
+//   color: rgb(245, 142, 95);
+// }

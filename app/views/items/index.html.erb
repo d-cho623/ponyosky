@@ -1,18 +1,4 @@
-<header class="first-header">
-<div class="nav">
-  <h1>PONYOSKY</h1>
-
-  <ul class="lists-right">
-    <%if user_signed_in?%>
-      <li><%= link_to current_user.name, "#", class: "user-uid" %> </li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "index-btn" %> </li>
-    <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "index-btn" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "index-btn"%></li>
-    <% end %>
-  </ul>
-  </div>
-</header>
+<%= render "shared/header"%>
 
 <div class='main'>
 
@@ -46,7 +32,7 @@
         <ul class='item-lists'>
           <% @items.each do |item| %>
             <div class="item-data">
-              <%= link_to "#" do %>
+              <%= link_to item_path(item.id) do %>
                 <li class='item-name'>
                   <%= item.name %>
                 </li>
