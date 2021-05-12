@@ -6,3 +6,11 @@ ja:
         email: メールアドレス
         uid: ユーザーID
         occupation_id: 役職
+      item:
+        maker: メーカー
+        name: 商品名
+        unit: 単位
+        quantity: 数量
+        price: 価格
+        total_price: 合計金額
+        

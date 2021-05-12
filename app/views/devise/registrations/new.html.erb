@@ -1,6 +1,4 @@
-<header class="second-header">
-  <%= link_to "PONYOSKY" ,"/",class: "second-h1"%>
-</header>
+<%= render "shared/header"%>
 
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 

@@ -1,4 +1,4 @@
-<header>
+<header class="first-header">
 <div class="nav">
   <h1>PONYOSKY</h1>
 
@@ -22,6 +22,10 @@
     </h2>
     <p>物品の購入申請をしよう！</p>
   </div>
+  
+    <div class="order">
+      <%= link_to '購入申請ページへ', new_item_path, class: "order-btn" %>
+    </div>
 
   <div class="tabs">
   <input id="all" type="radio" name="tab_item" checked>

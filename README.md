@@ -27,7 +27,7 @@
 | price                   | integer    | null: false                    |
 | total_price             | integer    | null: false                    |
 | trading_company         | string     | null: false                    |
-| search                  | string     | null: false                    |
+| retrieval               | string     | null: false                    |
 | user                    | references | null: false, foreign_key: true |
 
 ### Association

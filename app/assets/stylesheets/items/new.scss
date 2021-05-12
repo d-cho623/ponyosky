@@ -1,17 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
-.second-header {
-  font-family: 'Dancing Script', cursive;
-  margin: 0;
-  width: 100%;
-  background-color: rgb(188, 235, 243);
-  padding: 33px 10px;
+.content {
+  background-color: #fff;
+  width: 600px;
+  margin: 10px auto;
+  border: solid 1px #d1d1d1;
+  padding: 20px;
 }
 
-.second-h1 {
-  text-decoration: none;
-  font-size: 40px;
-  color: black;
+
+.control {
+  margin-bottom: 2em;
+}
+
+.input-default {
+  border: none;
+  border-bottom: 1px solid #d1d1d1;
+  font-size: 1.1em;
+  width: 100%;
+  padding: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: .5em;
+}
+.required {
+  color: #f33;
+  font-size: .9em;
+  padding: 3px;
+  background-color: #fee;
   font-weight: bold;
-  margin: 0 0 0 30px;
+}
+
+.no-required {
+  color: black;
+  font-size: .9em;
+  padding: 3px;
+  background-color: rgb(200, 239, 252);
+  font-weight: bold;
+}
+
+.which-required {
+  color: rgb(20, 187, 95);
+  font-size: .9em;
+  padding: 3px;
+  background-color: rgb(247, 246, 233);
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  background-color: #2096f3;
+  color: #fff;
+  padding: 15px;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+}
+
+.img-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 2vh;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
 }
