@@ -177,9 +177,9 @@ input[name="tab_item"] {
 
 
 /*選択されているタブのコンテンツのみを表示*/
-#all:checked ~ #all_content,
-#programming:checked ~ #programming_content,
-#design:checked ~ #design_content {
+#wait_approval:checked ~ #approval_content,
+#wait_order:checked ~ #order_content,
+#wait_delivery:checked ~ #delivery_content {
   display: block;
 }
 
@@ -207,4 +207,36 @@ input[name="tab_item"] {
 .order-btn {
   text-decoration: none;
   color: white;
+}
+
+.require-sign-in {
+  width: 500px;
+  margin: 0 auto 50px;
+  text-align: center;
+  padding: 10px;
+  border: 3px solid rgb(70, 46, 202);
+  font-size: 30px;
+  background-color: rgb(102, 119, 218);
+  border-radius: 0.2em;
+}
+
+.sign-in-btn {
+  text-decoration: none;
+  color: white;
+}
+
+.item-data {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.item-name {
+  font-size: 1.2em;
+  text-align: left;
+  width: 150px;
+}
+
+.item-user {
+  text-align: left;
 }

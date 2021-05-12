@@ -14,11 +14,7 @@ class Item < ApplicationRecord
     validates :total_price
   end
 
- # codeが空ならば、numberを必須にする
- validates :number, presence: true, unless: :code?
-
- # numberが空ならば、codeを必須にする
- validates :code, presence: true, unless: :number?
-
+  validates :number, presence: true, if: -> { code.blank? }
+  validates :code, presence: true, if: -> { number.blank? }
 
 end

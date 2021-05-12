@@ -23,28 +23,52 @@
     <p>物品の購入申請をしよう！</p>
   </div>
   
+  <% if user_signed_in? %>
     <div class="order">
       <%= link_to '購入申請ページへ', new_item_path, class: "order-btn" %>
     </div>
+  <% else %>
+    <div class="require-sign-in">
+      <%= link_to '新規登録', new_user_registration_path, class: "sign-in-btn" %>
+    </div>
+  <% end %>
 
   <div class="tabs">
-  <input id="all" type="radio" name="tab_item" checked>
-  <label class="tab_item" for="all">承認待ち</label>
-  <input id="programming" type="radio" name="tab_item">
-  <label class="tab_item" for="programming">発注待ち</label>
-  <input id="design" type="radio" name="tab_item">
-  <label class="tab_item" for="design">納入待ち</label>
-  <div class="tab_content" id="all_content">
+  <input id="wait_approval" type="radio" name="tab_item" checked>
+  <label class="tab_item" for="wait_approval">承認待ち</label>
+  <input id="wait_order" type="radio" name="tab_item">
+  <label class="tab_item" for="wait_order">発注待ち</label>
+  <input id="wait_delivery" type="radio" name="tab_item">
+  <label class="tab_item" for="wait_delivery">納入待ち</label>
+  <div class="tab_content" id="approval_content">
     <div class="tab_content_description">
-      <p class="c-txtsp">承認待ちの内容がここに入ります</p>
+      <p class="c-txtsp">
+        <ul class='item-lists'>
+          <% @items.each do |item| %>
+            <div class="item-data">
+              <%= link_to "#" do %>
+                <li class='item-name'>
+                  <%= item.name %>
+                </li>
+              <% end %>
+              <div class="item-user">
+                <%= item.user.name %>
+              </div>
+              <div class="item-date">
+                <%= item.created_at.to_s(:datetime_jp)%>
+              </div>
+            </div>
+          <% end %>
+        </ul>
+      </p>
     </div>
   </div>
-  <div class="tab_content" id="programming_content">
+  <div class="tab_content" id="order_content">
     <div class="tab_content_description">
       <p class="c-txtsp">発注待ちの内容がここに入ります</p>
     </div>
   </div>
-  <div class="tab_content" id="design_content">
+  <div class="tab_content" id="delivery_content">
     <div class="tab_content_description">
       <p class="c-txtsp">納入待ちの内容がここに入ります</p>
     </div>
