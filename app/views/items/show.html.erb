@@ -49,6 +49,10 @@
             <th class="table__col1">検索方法</th>
             <td class="table__col2"><%= @item.retrieval %></td>
           </tr>
+          <%# <tr>
+            <th class="table__col1">添付資料</th>
+            <td class="table__col2"><%= image_tag @item.image</td> %>
+          <%# </tr>  %>
         </tbody>
       </table>
       <% if current_user.occupation_id == 5 %>

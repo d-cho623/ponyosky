@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_one_attached :pdf
+  has_one_attached :image
 
   with_options presence: true do
     validates :maker
@@ -15,7 +15,8 @@ class Item < ApplicationRecord
     validates :total_price
   end
 
-
+  # validates :image, presence: { message: 'を添付してください' }
+  
   private
   def number_or_code
     number.presence or code.presence
