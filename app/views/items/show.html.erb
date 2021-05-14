@@ -56,14 +56,23 @@
         </tbody>
       </table>
       <% if current_user.occupation_id == 5 %>
-        <% if current_user.already_approved?(@item) %>
-          <%= button_to '承認を取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
-        <% else %>
-          <%= button_to '承認する', item_approvals_path(@item), class: "approval-btn" %>
+        <% if @item.rejects.length == 0 %>
+          <% if current_user.already_approved?(@item) %>
+            <%= button_to '承認を取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
+          <% else %>
+            <%= button_to '承認する', item_approvals_path(@item), class: "approval-btn" %>
+          <% end %>
+        <% end %>
+        <% if @item.approvals.length == 0 %>
+          <% if current_user.already_rejected?(@item) %>
+            <%= button_to '却下を取り消す', item_reject_path(@item), method: :delete, class: "reject-delete-btn" %>
+          <% else %>
+            <%= button_to '却下する', item_rejects_path(@item), class: "reject-btn" %>
+          <% end %>
         <% end %>
       <% end %>
 
-      <% if current_user.occupation_id == 6 && @item.approvals.length == 1 || 2 %>
+      <% if current_user.occupation_id == 6 && (@item.approvals.length == 1 || 2) %>
         <% if current_user.already_approved?(@item) %>
           <%= button_to '発注済みを取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
         <% else %>

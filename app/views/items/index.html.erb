@@ -40,7 +40,7 @@
         <p class="c-txtsp">
           <ul class='item-lists'>
             <% @items.each do |item| %>
-              <% unless item.approvals.present?%>
+              <% unless item.approvals.present? || item.rejects.present?%>
                 <div class="item-data">
                   <%= link_to item_path(item.id) do %>
                     <li class='item-name'>
@@ -90,7 +90,7 @@
         <p class="c-txtsp">
           <ul class='item-lists'>
             <% @items.each do |item| %>
-              <% if item.approvals.length == 2%>
+              <% if item.approvals.length == 2 && item.rejects.length == 0 %>
                 <div class="item-data">
                   <%= link_to item_path(item.id) do %>
                     <li class='item-name'>
@@ -112,11 +112,30 @@
     </div>
     <div class="tab_content" id="rejected_content">
       <div class="tab_content_description">
-        <p class="c-txtsp">納入待ちの内容がここに入ります</p>
+        <p class="c-txtsp">
+          <ul class='item-lists'>
+              <% @items.each do |item| %>
+                <% if item.rejects.length == 1%>
+                  <div class="item-data">
+                    <%= link_to item_path(item.id) do %>
+                      <li class='item-name'>
+                        <%= item.name %>
+                      </li>
+                    <% end %>
+                    <div class="item-user">
+                      <%= "申請者：#{item.user.name}" %>
+                    </div>
+                    <div class="item-date">
+                      <%= "申請日：#{item.created_at.to_s(:datetime_jp)}" %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </ul>
+        </p>
       </div>
     </div>
   </div>
   <% else %>
   <%# サインインしていない場合の見た目 %>
   <% end %>
-  

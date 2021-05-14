@@ -7,9 +7,15 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :approvals, dependent: :destroy
   has_many :approved_items, through: :approvals, source: :item
+  has_many :rejects, dependent: :destroy
+  has_many :rejected_items, through: :rejects, source: :item
 
   def already_approved?(item)
     self.approvals.exists?(item_id: item.id)
+  end
+
+  def already_rejected?(item)
+    self.rejects.exists?(item_id: item.id)
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions

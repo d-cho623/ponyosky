@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
 
   def show
     @approval = Approval.new
+    @reject = Reject.new
   end
 
   def edit
