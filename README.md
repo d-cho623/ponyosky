@@ -15,6 +15,7 @@
 ### Association
 - has_many: items
 
+## items テーブル
 
 | Column                  | Type       | Options                        |
 | ----------------------  | ------     | ----------------------------   |
@@ -31,3 +32,11 @@
 
 ### Association
 - belongs_to: user
+
+
+## approvals テーブル
+
+| Column                  | Type           | Options                        |
+| ----------------------  | -------------- | ----------------------------   |
+| user_id                 | references     | null: false,foreign_key: true  |
+| item_id                 | references     | null: false,foreign_key: true  |

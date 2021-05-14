@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @approval = Approval.new
   end
 
   def edit

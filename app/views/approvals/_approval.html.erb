@@ -1,0 +1,8 @@
+<div class="approve_button_on">
+    <%= link_to "却下", approvals_delete_path(item_id: @item.id), {method: "post", remote: true} %>
+    <%= @approval_count %>
+</div>
+<div class="approve_button">
+    <%= link_to "承認", approvals_create_path(item_id: @item.id), {method: "post", remote: true} %>
+    <%= @approval_count %>
+</div>

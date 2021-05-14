@@ -4,7 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :items
+  has_many :items, dependent: :destroy
+  has_many :approvals, dependent: :destroy
+  has_many :approved_items, through: :approvals, source: :item
+
+  def already_approved?(item)
+    self.approvals.exists?(item_id: item.id)
+  end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :occupation

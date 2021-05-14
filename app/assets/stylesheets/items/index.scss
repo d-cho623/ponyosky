@@ -4,6 +4,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+  padding-bottom: 50px;
 }
 
 .title-contents {
@@ -108,6 +109,11 @@ input[name="tab_item"] {
 .order-btn {
   text-decoration: none;
   color: white;
+}
+
+.user-btn {
+  display: flex;
+  justify-content: space-around;
 }
 
 .require-sign-in {
