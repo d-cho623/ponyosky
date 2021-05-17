@@ -1,10 +1,17 @@
 .main {
   background: rgb(241, 223, 235);
-  background-image: image-url('ponyosky-header01.jpeg');
+  background-image: image-url('ponyosky-2.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
   padding-bottom: 50px;
+}
+
+.main-contents {
+  background-image: image-url('ponyosky-2.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .title-contents {
@@ -15,12 +22,8 @@
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
-  color: rgb(6, 26, 202);
+  color: rgb(2, 27, 248);
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-image: image-url('ponyosky-header01.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
 
 .title-contents p {
@@ -45,7 +48,7 @@
 
 /*タブのスタイル*/
 .tab_item {
-  width: calc(100%/4);
+  width: calc(100%/5);
   height: 50px;
   border-bottom: 3px solid #5ab4bd;
   background-color: #d9d9d9;
@@ -81,6 +84,7 @@ input[name="tab_item"] {
 #wait_approval:checked ~ #approval_content,
 #wait_order:checked ~ #order_content,
 #wait_delivery:checked ~ #delivery_content,
+#already_delivery:checked ~ #already_content,
 #rejected:checked ~ #rejected_content {
   display: block;
 }
@@ -109,6 +113,11 @@ input[name="tab_item"] {
 .order-btn {
   text-decoration: none;
   color: white;
+}
+
+.order:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
 }
 
 .user-btn {
@@ -147,3 +156,74 @@ input[name="tab_item"] {
 .item-user {
   text-align: left;
 }
+
+
+/* ログインしていない場合の表示部分 */
+.can-do-contents {
+  padding: 5vh 5vw;
+}
+
+.can-do-contents>.title {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  position: relative;
+}
+
+.can-do-contents>.title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: #ce8f3c;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.can-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.can-lists>.list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.list-pict {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.can-list-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #eec271;
+  color: #fff;
+}
+
+.can-list-text {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 50px;
+  color:rgb(248, 92, 2)
+}
+
+
+.can-list-description {
+  font-size: 18px;
+  margin-top: 20px;
+}
+/* ログインしていない場合の表示部分 */

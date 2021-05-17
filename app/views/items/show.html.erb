@@ -72,6 +72,16 @@
         <% end %>
       <% end %>
 
+       <% if @item.rejects.length == 0 %>
+        <% if current_user.occupation_id == 7 && (@item.approvals.length == 2 || 3) %>
+          <% if current_user.already_approved?(@item) %>
+            <%= button_to '納入済みを取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
+          <% else %>
+            <%= button_to '納入済み', item_approvals_path(@item), class: "approval-btn" %>
+          <% end %>
+        <% end %>
+      <% end %>
+
       <% if @item.rejects.length == 0 %>
         <% if current_user.occupation_id == 6 && (@item.approvals.length == 1 || 2) %>
           <% if current_user.already_approved?(@item) %>

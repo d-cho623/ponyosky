@@ -1,28 +1,29 @@
 <%= render "shared/header"%>
 
 <div class='main'>
-
-  <div class='title-contents'>
-    <h2 class='service-title'>
-      PONYOSKYで
-    </h2>
-    <p>物品の購入申請をしよう！</p>
+  <div class="main-contents">
+    <div class='title-contents'>
+      <h2 class='service-title'>
+        PONYOSKYで
+      </h2>
+      <p>物品の購入申請をしよう！</p>
+    </div>
+    
+    <% if user_signed_in? %>
+      <div class="order">
+        <%= link_to '購入申請ページへ', new_item_path, class: "order-btn" %>
+      </div>
+    <% else %>
+      <div class="user-btn">
+        <div class="require-sign-in">
+          <%= link_to '早速ユーザー新規登録！', new_user_registration_path, class: "sign-in-btn" %>
+        </div>
+            <div class="require-sign-in">
+          <%= link_to 'アカウントを既にお持ちの方', new_user_session_path, class: "sign-in-btn" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  
-  <% if user_signed_in? %>
-    <div class="order">
-      <%= link_to '購入申請ページへ', new_item_path, class: "order-btn" %>
-    </div>
-  <% else %>
-    <div class="user-btn">
-      <div class="require-sign-in">
-        <%= link_to '早速ユーザー新規登録！', new_user_registration_path, class: "sign-in-btn" %>
-      </div>
-          <div class="require-sign-in">
-        <%= link_to 'アカウントを既にお持ちの方', new_user_session_path, class: "sign-in-btn" %>
-      </div>
-    </div>
-  <% end %>
 </div>
 
   <% if user_signed_in?%>
@@ -33,6 +34,8 @@
     <label class="tab_item" for="wait_order">発注待ち</label>
     <input id="wait_delivery" type="radio" name="tab_item">
     <label class="tab_item" for="wait_delivery">納入待ち</label>
+    <input id="already_delivery" type="radio" name="tab_item">
+    <label class="tab_item" for="already_delivery">納入済み</label>
     <input id="rejected" type="radio" name="tab_item">
     <label class="tab_item" for="rejected">却下申請</label>
     <div class="tab_content" id="approval_content">
@@ -110,6 +113,31 @@
         </p>
       </div>
     </div>
+     <div class="tab_content" id="already_content">
+     <div class="tab_content_description">
+        <p class="c-txtsp">
+          <ul class='item-lists'>
+            <% @items.each do |item| %>
+              <% if item.approvals.length == 3 && item.rejects.length == 0 %>
+                <div class="item-data">
+                  <%= link_to item_path(item.id) do %>
+                    <li class='item-name'>
+                      <%= item.name %>
+                    </li>
+                  <% end %>
+                  <div class="item-user">
+                    <%= "申請者：#{item.user.name}" %>
+                  </div>
+                  <div class="item-date">
+                    <%= "申請日：#{item.created_at.to_s(:datetime_jp)}" %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </ul>
+        </p>
+      </div>
+    </div>
     <div class="tab_content" id="rejected_content">
       <div class="tab_content_description">
         <p class="c-txtsp">
@@ -138,4 +166,51 @@
   </div>
   <% else %>
   <%# サインインしていない場合の見た目 %>
+   <div class='can-do-contents'>
+    <h2 class='title'>
+      PONYOSKYでできること
+    </h2>
+    <ul class='can-lists'>
+      <li class='list'>
+        <%= image_tag "ponyosky-3.jpeg", class:"list-pict" %>
+        <span class='can-list-number'>1</span>
+        <h3 class='can-list-text'>
+          物品を購入申請
+        </h3>
+        <p class='can-list-description'>
+          社内に備品や部品を購入申請したい。そんな時はPONYOSKYで購入申請しよう！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "ponyosky-4.jpeg", class:"list-pict" %> 
+        <span class='can-list-number'>2</span>
+        <h3 class='can-list-text'>
+          購入申請の承認
+        </h3>
+        <p class='can-list-description'>
+          申請された購入申請は、上司役職が承認することができます！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "ponyosky-5.jpeg", class:"list-pict" %>
+        <span class='can-list-number'>3</span>
+        <h3 class='can-list-text'>
+          発注処理
+        </h3>
+        <p class='can-list-description'>
+          上司が申請を承認すると、発注待ちとなります。工具室職は発注後、申請を発注処理します！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "ponyosky-6.jpeg", class:"list-pict" %>
+        <span class='can-list-number'>4</span>
+        <h3 class='can-list-text'>
+          納入処理
+        </h3>
+        <p class='can-list-description'>
+          工具室が発注処理すると、納入待ち状態になります。実際に申請された商品が届き次第、受入グループが納入処理をします！
+        </p>
+      </li>
+    </ul>
+  </div>
   <% end %>

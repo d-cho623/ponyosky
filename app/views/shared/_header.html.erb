@@ -1,14 +1,19 @@
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
 <header class="first-header">
 <div class="nav">
-  <h1><%= link_to "PONYOSKY", "/", class:"first-h1"%></h1>
+  <h1><%= link_to "/", class:"first-h1" do%>
+    <i class="fas fa-cloud"></i> PONYOSKY
+    <% end %>
+  </h1>
 
   <ul class="lists-right">
     <%if user_signed_in?%>
-      <li><%= link_to current_user.name, user_path(current_user.id), class: "user-uid" %> </li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "index-btn" %> </li>
+      <li><%= link_to "名前：#{current_user.name}", user_path(current_user.id), class: "btn02" %> </li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn01" %> </li>
     <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "index-btn" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "index-btn"%></li>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "btn01" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "btn01"%></li>
     <% end %>
   </ul>
   </div>

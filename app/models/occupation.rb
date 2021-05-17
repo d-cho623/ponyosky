@@ -6,7 +6,7 @@ class Occupation < ActiveHash::Base
     { id: 4, name: '職場長' },
     { id: 5, name: '課長' },
     { id: 6, name: '工具室' },
-    { id: 7, name: '支援G' }
+    { id: 7, name: '受入G' }
   ]
  
    include ActiveHash::Associations

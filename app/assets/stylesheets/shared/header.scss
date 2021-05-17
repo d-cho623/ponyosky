@@ -12,7 +12,7 @@
 }
 
 .first-header {
-  background-color: rgb(188, 235, 243);
+  background-color: rgb(218, 241, 245);
 }
 
 
@@ -32,73 +32,36 @@
   margin: 0 60px 40px 0;
 }
 
-.index-btn {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  margin-top: 4vh;
-  border: 1px solid rgb(67, 127, 238);
-  color: #FFF;
-  background-color: rgb(67, 127, 238);
+.btn01 {
+  border: 1px solid rgb(172, 201, 235);
+  color: #333;
+  background: rgb(214, 222, 240);
+  padding: 10px 30px;
   display: inline-block;
-  position: relative;
-  padding: 0.5em 1.4em;
   text-decoration: none;
-  border-bottom: solid 5px #113fda;/*ボタン色より暗めに*/
-  border-right: solid 5px #113fda;/*ボタン色より暗めに*/
+  outline: none;
+  transition: all .3s;
+  margin: 40px 0 0 40px;
 }
 
-.index-btn:before {  
-  content: " ";
-  position: absolute;
-  bottom: -5px;
-  left: -1px;
-  width: 0;
-  height: 0;
-  border-width: 0 6px 6px 0px;
-  border-style: solid;
+.btn01:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
   border-color: transparent;
-  border-bottom-color: #FFF;
 }
 
-.login:after {  
-  content: " ";
-  position: absolute;
-  top: -1px;
-  right: -5px;
-  width: 0;
-  height: 0;
-  border-width: 0px 6px 6px 0px;
-  border-style: solid;
-  border-color: #FFF;
-  border-bottom-color: transparent;
+.btn02 {
+  border: 1px solid rgb(240, 215, 161);
+  color: #333;
+  background: rgb(238, 227, 197);
+  padding: 10px 30px;
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  transition: all .3s;
+  margin: 40px 0 0 40px;
 }
 
-.index-btn:active {
-  /*ボタンを押したとき*/
-  border:none;
-  -webkit-transform: translate(6px,6px);
-  transform: translate(6px,6px);
+.btn02:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
 }
-
-.index-btn:after, .index-btn:before {
-  content: none;/*ボタンを押すと線が消える*/
-}
-
-// .sign-up {
-//   text-decoration: none;
-//   line-height: 32px;
-//   margin-right: 3vw;
-//   border: 1px solid rgb(245, 142, 95);
-//   padding: 20px;
-//   color: rgb(245, 142, 95);
-// }
-
-// .logout {
-//   text-decoration: none;
-//   line-height: 32px;
-//   margin-right: 3vw;
-//   border: 1px solid rgb(245, 142, 95);
-//   padding: 20px;
-//   color: rgb(245, 142, 95);
-// }
