@@ -47,6 +47,8 @@ PONYOSKY
 
 ### Association
 - has_many: items
+- has_many: approvals
+- has_many: rejects
 
 ## items テーブル
 
@@ -65,11 +67,29 @@ PONYOSKY
 
 ### Association
 - belongs_to: user
+- has_many: approvals
+- has_many: rejects
 
 
 ## approvals テーブル
 
 | Column                  | Type           | Options                        |
 | ----------------------  | -------------- | ----------------------------   |
-| user_id                 | references     | null: false,foreign_key: true  |
-| item_id                 | references     | null: false,foreign_key: true  |
+| user                    | references     | null: false,foreign_key: true  |
+| item                    | references     | null: false,foreign_key: true  |
+
+### Association
+- belongs_to: user
+- belongs_to: item
+
+
+## rejects テーブル
+
+| Column                  | Type           | Options                        |
+| ----------------------  | -------------- | ----------------------------   |
+| user                    | references     | null: false,foreign_key: true  |
+| item                    | references     | null: false,foreign_key: true  |
+
+### Association
+- belongs_to: user
+- belongs_to: item
