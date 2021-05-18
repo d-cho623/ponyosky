@@ -92,14 +92,12 @@
         <% end %>
       <% end %>
 
-      <% if @item.rejects.length == 0 %>
         <% if @item.user.id == current_user.id || current_user.occupation_id == 6 %>
           <div class="control">
             <%= link_to "申請を変更する", edit_item_path(@item.id), method: :get, class: "item-edit" %>
             <%= link_to "購入申請を取り消す", item_path(@item.id), method: :delete, class:"item-destroy" %>
           </div>
         <% end %>
-      <% end %>
     </div>
   </div>
 
