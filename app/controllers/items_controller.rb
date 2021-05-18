@@ -23,6 +23,8 @@ class ItemsController < ApplicationController
   def show
     @approval = Approval.new
     @reject = Reject.new
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def edit

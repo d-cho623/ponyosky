@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :approved_items, through: :approvals, source: :item
   has_many :rejects, dependent: :destroy
   has_many :rejected_items, through: :rejects, source: :item
+  has_many :comments, dependent: :destroy
 
   def already_approved?(item)
     self.approvals.exists?(item_id: item.id)
@@ -24,7 +25,7 @@ class User < ApplicationRecord
   belongs_to :workplace
 
   validates :name, presence: true, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'はスペースを空けず、全角(漢字、ひらがな、カタカナ)のみで入力してください'}
-  validates :uid, uniqueness: true, presence: true, format: {with: /\A[a-zA-Z0-9]+\z/}
+  validates :uid, uniqueness: { case_sensitive: true }, presence: true, format: {with: /\A[a-zA-Z0-9]+\z/}
   validates :occupation_id, numericality: { other_than: 1, message: 'が選択されていません' }
 
   

@@ -100,3 +100,64 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
   margin-bottom: 20px;
 }
+
+/* コメント表示のCSS */
+
+.item_comments{
+  background-color: #eaf5f7;
+  padding: 20px;
+  margin: 0 auto;
+  width: 50%;
+}
+
+#comment_text {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: solid 2px #dedede;
+  resize: none;
+}
+
+.upper-message {
+  display: flex;
+}
+
+.message-date{
+  padding-left: 50px;
+  color: rgb(160, 159, 159);
+}
+
+.lower-message{
+  margin-top: 10px;
+}
+
+.message-content{
+  color: #434A54;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.comments_lists{
+  padding-left: 20px;
+}
+
+.comments_list{
+  list-style-type: square;
+  padding-bottom: 5px;
+}
+
+.comment_user{
+  font-size: 16px;
+  color: #999;
+  text-decoration: underline;
+}
+
+.form-submit{
+  padding: 0 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #38AEF0;
+  border: none;
+  height: 50px;
+  margin-left: 15px;
+}

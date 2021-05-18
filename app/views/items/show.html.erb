@@ -95,11 +95,44 @@
       <% if @item.rejects.length == 0 %>
         <% if @item.user.id == current_user.id || current_user.occupation_id == 6 %>
           <div class="control">
-            <%= link_to "申請を変更する", edit_item_path, method: :get, class: "item-edit" %>
-            <%= link_to "購入申請を取り消す", item_path, method: :delete, class:"item-destroy" %>
+            <%= link_to "申請を変更する", edit_item_path(@item.id), method: :get, class: "item-edit" %>
+            <%= link_to "購入申請を取り消す", item_path(@item.id), method: :delete, class:"item-destroy" %>
           </div>
         <% end %>
       <% end %>
     </div>
+  </div>
+
+  <div class="item_comments">
+    <%if user_signed_in? %>
+      <%= form_with model: [@item, @comment],url: item_comments_path(@item.id), local: true do |f|%>
+        <div class="field">
+          <%= f.label :text, "コメント" %><br />
+          <%= f.text_area :text, id:"comment_text" %>
+        </div>
+        <div class="actions">
+            <%= f.submit "送信", class: :form_submit  %>
+        </div>
+      <% end %>
+    <% end %> 
+    <ul class="comments_lists">
+      <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+      <% @comments.each do |comment|%>
+        <div class="upper-message">
+          <div class="message-user">
+            <%= "名前：#{comment.user.name}" %>
+          </div>
+          <div class="message-date">
+            <%= comment.created_at.to_s(:datetime_jp) %>
+          </div>
+        </div>
+        <div class="lower-message">
+          <div class="message-content">
+            <%= comment.text%>
+          </div>
+        </div>
+      <% end %>
+      <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+    </ul>
   </div>
 </div>
