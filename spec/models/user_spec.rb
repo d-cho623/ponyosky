@@ -45,7 +45,19 @@ RSpec.describe User, type: :model do
         it "uidは半角以外では入力できない" do
           @user.uid = "あaaaa"
           @user.valid?
-          expect(@user.errors.full_messages).to include("ユーザーIDは不正な値です")
+          expect(@user.errors.full_messages).to include("ユーザーIDは3〜15文字の半角英数字で入力してください")
+        end
+
+        it "uidは2文字以下では登録できない" do
+          @user.uid = "aa"
+          @user.valid?
+          expect(@user.errors.full_messages).to include("ユーザーIDは3〜15文字の半角英数字で入力してください")
+        end
+
+        it "uidは15文字以上では登録できない" do
+          @user.uid = "abcdefghijklmnop"
+          @user.valid?
+          expect(@user.errors.full_messages).to include("ユーザーIDは3〜15文字の半角英数字で入力してください")
         end
 
         it "既に存在するuidでは登録できない" do
