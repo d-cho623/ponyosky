@@ -1,8 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_many :approvals
+  has_many :approvals, dependent: :destroy
   has_many :approved_users, through: :approvals, source: :user
-  has_many :rejects
+  has_many :rejects, dependent: :destroy
   has_many :rejected_users, through: :rejects, source: :user
   has_many :comments, dependent: :destroy
   # has_one_attached :image

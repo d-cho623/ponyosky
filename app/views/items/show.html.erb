@@ -49,55 +49,47 @@
             <th class="table__col1">検索方法</th>
             <td class="table__col2"><%= @item.retrieval %></td>
           </tr>
-          <%# <tr>
-            <th class="table__col1">添付資料</th>
-            <td class="table__col2"><%= image_tag @item.image</td> %>
-          <%# </tr>  %>
         </tbody>
       </table>
       <% if current_user.occupation_id == 5 %>
         <% if @item.rejects.length == 0 %>
-          <% if current_user.already_approved?(@item) %>
+          <% if current_user.already_approved?(@item) && @item.approvals.length == 1 %>
             <%= button_to '承認を取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
-          <% else %>
+          <% elsif @item.approvals.length == 0 %>
             <%= button_to '承認する', item_approvals_path(@item), class: "approval-btn" %>
           <% end %>
         <% end %>
         <% if @item.approvals.length == 0 %>
-          <% if current_user.already_rejected?(@item) %>
+          <% if current_user.already_rejected?(@item) && @item.rejects.length == 1 %>
             <%= button_to '却下を取り消す', item_reject_path(@item), method: :delete, class: "reject-delete-btn" %>
-          <% else %>
+          <% elsif @item.rejects.length == 0 %>
             <%= button_to '却下する', item_rejects_path(@item), class: "reject-btn" %>
           <% end %>
         <% end %>
       <% end %>
 
-       <% if @item.rejects.length == 0 %>
-        <% if current_user.occupation_id == 7 && (@item.approvals.length == 2 || 3) %>
-          <% if current_user.already_approved?(@item) %>
-            <%= button_to '納入済みを取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
-          <% else %>
-            <%= button_to '納入済み', item_approvals_path(@item), class: "approval-btn" %>
-          <% end %>
+      <% if @item.rejects.length == 0 && current_user.occupation_id == 6 %>
+        <% if current_user.already_approved?(@item) && @item.approvals.length == 2 %>
+          <%= button_to '発注済みを取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
+        <% elsif @item.approvals.length == 1 %>
+          <%= button_to '発注済み', item_approvals_path(@item), class: "approval-btn" %>
         <% end %>
       <% end %>
 
-      <% if @item.rejects.length == 0 %>
-        <% if current_user.occupation_id == 6 && (@item.approvals.length == 1 || 2) %>
-          <% if current_user.already_approved?(@item) %>
-            <%= button_to '発注済みを取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
-          <% else %>
-            <%= button_to '発注済み', item_approvals_path(@item), class: "approval-btn" %>
-          <% end %>
+      <% if @item.rejects.length == 0 && current_user.occupation_id == 7 %>
+        <% if current_user.already_approved?(@item) && @item.approvals.length == 3 %>
+          <%= button_to '納入済みを取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
+        <% elsif @item.approvals.length == 2 %>
+          <%= button_to '納入済み', item_approvals_path(@item), class: "approval-btn" %>
         <% end %>
       <% end %>
 
-        <% if @item.user.id == current_user.id || current_user.occupation_id == 6 %>
-          <div class="control">
-            <%= link_to "申請を変更する", edit_item_path(@item.id), method: :get, class: "item-edit" %>
-            <%= link_to "購入申請を取り消す", item_path(@item.id), method: :delete, class:"item-destroy" %>
-          </div>
-        <% end %>
+      <% if @item.user.id == current_user.id || current_user.occupation_id == 6 %>
+        <div class="control">
+          <%= link_to "申請を変更する", edit_item_path(@item.id), method: :get, class: "item-edit" %>
+          <%= link_to "申請を取り消す", item_path(@item.id), method: :delete, class:"item-destroy" %>
+        </div>
+      <% end %>
     </div>
   </div>
 

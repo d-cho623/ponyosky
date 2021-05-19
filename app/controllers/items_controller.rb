@@ -43,6 +43,58 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def new_guest
+    user = User.find_or_create_by(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.uid = "guestuser_1"
+      user.name = "ゲストユーザー"
+      user.occupation_id = 2
+      user.workplace_id = 2
+      user.group_id = 2
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
+
+  def new_guest2
+    user = User.find_or_create_by(email: 'guest2@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.uid = "guestuser_2"
+      user.name = "ゲスト課長"
+      user.occupation_id = 5
+      user.workplace_id = 2
+      user.group_id = 2
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザー(課長)としてログインしました。'
+  end
+
+  def new_guest3
+    user = User.find_or_create_by(email: 'guest3@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.uid = "guestuser_3"
+      user.name = "ゲスト発注グループ"
+      user.occupation_id = 6
+      user.workplace_id = 2
+      user.group_id = 2
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザー(発注グループ)としてログインしました。'
+  end
+
+  def new_guest4
+    user = User.find_or_create_by(email: 'guest4@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.uid = "guestuser_4"
+      user.name = "ゲスト受入グループ"
+      user.occupation_id = 7
+      user.workplace_id = 2
+      user.group_id = 2
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザー(受入グループ)としてログインしました。'
+  end
+
   private
 
   def item_params

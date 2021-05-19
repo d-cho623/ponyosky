@@ -65,3 +65,21 @@
   box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
   border-color: transparent;
 }
+
+.btn03 {
+  border: 1px solid rgb(172, 201, 235);
+  color: #333;
+  background: rgb(214, 222, 240);
+  // padding: 10px 30px;
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  transition: all .3s;
+  margin: 5px 0 0 40px;
+  font-size: 15px;
+}
+
+.btn03:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+}
