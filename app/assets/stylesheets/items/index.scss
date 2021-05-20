@@ -117,7 +117,7 @@ input[name="tab_item"] {
 }
 
 .order:hover {
-  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
   border-color: transparent;
 }
 
@@ -131,15 +131,20 @@ input[name="tab_item"] {
   margin: 0 auto 50px;
   text-align: center;
   padding: 10px;
-  border: 3px solid rgb(70, 46, 202);
+  border: 3px solid rgb(228, 152, 133);
   font-size: 30px;
-  background-color: rgb(102, 119, 218);
+  background-color: rgb(245, 226, 191);
   border-radius: 0.2em;
+}
+
+.require-sign-in:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
 }
 
 .sign-in-btn {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .item-lists {
