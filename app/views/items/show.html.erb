@@ -72,7 +72,7 @@
         <% if current_user.already_approved?(@item) && @item.approvals.length == 2 %>
           <%= button_to '発注済みを取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
         <% elsif @item.approvals.length == 1 %>
-          <%= button_to '発注済み', item_approvals_path(@item), class: "approval-btn" %>
+          <%= button_to '発注済みにする', item_approvals_path(@item), class: "approval-btn" %>
         <% end %>
       <% end %>
 
@@ -80,7 +80,7 @@
         <% if current_user.already_approved?(@item) && @item.approvals.length == 3 %>
           <%= button_to '納入済みを取り消す', item_approval_path(@item), method: :delete, class: "approval-delete-btn" %>
         <% elsif @item.approvals.length == 2 %>
-          <%= button_to '納入済み', item_approvals_path(@item), class: "approval-btn" %>
+          <%= button_to '納入済みにする', item_approvals_path(@item), class: "approval-btn" %>
         <% end %>
       <% end %>
 
@@ -90,6 +90,7 @@
           <%= link_to "申請を取り消す", item_path(@item.id), method: :delete, class:"item-destroy" %>
         </div>
       <% end %>
+      <%= button_to "トップページに戻る", root_path, method: :get, class: "top-page-btn" %>
     </div>
   </div>
 

@@ -42,21 +42,12 @@
       <label for="retrieval">検索方法 <span class="which-required">どちらか必須</span></label>
       <%= f.text_field :retrieval, class:"input-default", id:"retrieval", placeholder:"例) Google", maxlength:"40"%>
     </div>
-    
-     <%# 画像投稿機能の実装 %>
-    <%# <div class="img-upload">
-      <div class="click-upload">
-        <p>
-          見積書(PDFファイル)をアップロード <span class="required">必須</span>
-        </p>
-        <div class = "pdf-element">
-          <%= f.file_field :image, name: 'item-pdf', id:"item-pdf" %>
-        <%# </div>
-      </div>
-    </div> %> 
+
     <div class="control">
-      <%= f.submit "新規申請" ,class:"login-btn" %>
+      <%= f.submit "新規申請" ,class:"item-btn" %>
     </div>
+<% end %>   
+    <%= button_to "トップページに戻る", root_path, method: :get, class: "top-page-btn2" %>
   </div>
-<% end %>
+
 

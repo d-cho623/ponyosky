@@ -16,7 +16,7 @@
     <% else %>
       <div class="user-btn">
         <div class="require-sign-in">
-          <%= link_to '早速ユーザー新規登録！', new_user_registration_path, class: "sign-in-btn" %>
+          <%= link_to 'ユーザー新規登録', new_user_registration_path, class: "sign-in-btn" %>
         </div>
             <div class="require-sign-in">
           <%= link_to 'アカウントを既にお持ちの方', new_user_session_path, class: "sign-in-btn" %>
@@ -54,7 +54,7 @@
                     <%= "申請者：#{item.user.name}" %>
                   </div>
                   <div class="item-date">
-                    <%= item.created_at.to_s(:datetime_jp)%>
+                    <%= "申請日：#{item.created_at.to_s(:datetime_jp)}" %>
                   </div>
                 </div>
               <% end %>
@@ -76,10 +76,10 @@
                     </li>
                   <% end %>
                   <div class="item-user">
-                    <%= item.user.name %>
+                    <%= "申請者：#{item.user.name}" %>
                   </div>
                   <div class="item-date">
-                    <%= item.created_at.to_s(:datetime_jp)%>
+                    <%= "申請日：#{item.created_at.to_s(:datetime_jp)}" %>
                   </div>
                 </div>
               <% end %>
@@ -188,7 +188,7 @@
           購入申請の承認
         </h3>
         <p class='can-list-description'>
-          申請された購入申請は、上司役職が承認することができます！
+          申請された購入申請は、課長職が承認することができます！
         </p>
       </li>
       <li class='list'>
@@ -198,7 +198,7 @@
           発注処理
         </h3>
         <p class='can-list-description'>
-          上司が申請を承認すると、発注待ちとなります。工具室職は発注後、申請を発注処理します！
+          課長が申請を承認すると、発注待ちとなります。発注グループは発注後、申請を発注処理します！
         </p>
       </li>
       <li class='list'>
@@ -208,7 +208,7 @@
           納入処理
         </h3>
         <p class='can-list-description'>
-          工具室が発注処理すると、納入待ち状態になります。実際に申請された商品が届き次第、受入グループが納入処理をします！
+          発注グループが発注処理すると、納入待ち状態になります。実際に申請された商品が届き次第、受入グループが納入処理をします！
         </p>
       </li>
     </ul>

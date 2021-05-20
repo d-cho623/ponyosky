@@ -58,7 +58,7 @@
 }
 
 .approval-delete-btn {
-  width: 100%;
+  width: 91%;
   background-color: #f53131;
   color: #fff;
   padding: 15px;
@@ -69,7 +69,7 @@
 }
 
 .approval-btn {
-  width: 100%;
+  width: 91%;
   background-color: #2096f3;
   color: #fff;
   padding: 15px;
@@ -80,7 +80,7 @@
 }
 
 .reject-btn {
-  width: 100%;
+  width: 91%;
   background-color: #f53131;
   color: #fff;
   padding: 15px;
@@ -94,6 +94,17 @@
   width: 100%;
   background-color: #4758f1;
   color: #fff;
+  padding: 15px;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+  margin-bottom: 20px;
+}
+
+.top-page-btn {
+  width: 91%;
+  background-color: #fdfcfc;
+  color: rgb(5, 5, 5);
   padding: 15px;
   border: 0;
   border-radius: 3px;
