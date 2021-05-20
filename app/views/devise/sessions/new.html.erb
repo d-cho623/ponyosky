@@ -3,7 +3,9 @@
 <%= form_with model: @user, url: user_session_path, class: 'session-main', local: true do |f| %>
 <div class="content">
   <h1>ユーザーログイン</h1>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>  
   <p>次のフォームにユーザー情報を入力してください。</p>
   <div class="control">
     <label for="uid">ユーザーID <span class="required">必須</span></label>
