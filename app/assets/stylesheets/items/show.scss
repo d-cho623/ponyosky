@@ -121,6 +121,7 @@
   ;
 }
 
+
 .approval-btn {
   width: 91%;
   background-color: #2096f3;
@@ -158,6 +159,23 @@
   border-radius: 3px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
   margin-bottom: 20px;
+  cursor: pointer;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
+}
+
+.reject-btn:hover {
+  background: #fff;
+  color: #f53131;
+  border: 1px solid #f53131;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
 }
 
 .reject-delete-btn {

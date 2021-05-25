@@ -358,3 +358,38 @@ input[name="tab_item"] {
   padding-bottom: 40px;
 }
 
+.animationTarget {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: none;
+}
+
+.animationTarget h2 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+.animationTarget p {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: 2s;
+}
+
+.top-pic {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: 1s;
+}
+
+.animationTarget.show h2,
+.animationTarget.show p,
+.animationTarget.show .top-pic {
+  transform: none;
+  opacity: 1;
+}
