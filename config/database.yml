@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: ponyosky_production
-  username: ponyosky
-  password: <%= ENV['PONYOSKY_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
