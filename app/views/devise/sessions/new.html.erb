@@ -19,6 +19,14 @@
     <%= f.submit "ログイン" ,class:"login-btn" %>
   </div>
 <% end %>
+      <div class = "guest1">
+        <%= link_to 'ゲストログイン(一般ユーザー)', item_guest_sign_in_path, method: :post, class: "btn03" %>
+        <%= link_to 'ゲストログイン(課長ユーザー)', item_guest2_sign_in_path, method: :post, class: "btn03" %>
+      </div>
+      <div class = "guest2">
+        <%= link_to 'ゲストログイン(発注グループ)', item_guest3_sign_in_path, method: :post, class: "btn03" %>
+        <%= link_to 'ゲストログイン(受入グループ)', item_guest4_sign_in_path, method: :post, class: "btn03" %>
+      </div>
 <%= button_to "トップページに戻る", root_path, method: :get, class: "top-page-btn2" %>
 </div>
 

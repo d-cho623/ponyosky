@@ -10,20 +10,8 @@
         PONYOSKYで<br><br>
         物品の購入申請をしよう！
       </h2>
-    
-      <% if user_signed_in? %>
-        <%= link_to '購入申請ページへ', new_item_path, class: "order-btn" %>
+      <%= link_to '購入申請ページへ', new_item_path, class: "order-btn" %>
     </div>
-      <% else %>
-      <div class="user-btn">
-        <div class="require-sign-in">
-          <%= link_to 'ユーザー新規登録', new_user_registration_path, class: "sign-in-btn" %>
-        </div>
-        <div class="require-sign-in">
-          <%= link_to 'アカウントを既にお持ちの方', new_user_session_path, class: "sign-in-btn" %>
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>
 
@@ -241,9 +229,7 @@
   </section>
 
   <section id="how-to" class="wrapper3">
-    <h2 class ="how-to-text">HOW TO
-      <%= image_tag "ponyosky-11.webp", class:"how-to-pic" %>
-      </h2>
+    <h2 class ="how-to-text">HOW TO</h2>
     <p class="explain3">
       ①購入申請を作成します。<br><br>
       ②課長ユーザーは、購入申請に承認or却下をすることができます。<br><br>
@@ -252,5 +238,6 @@
       ⑤却下された申請は、却下ボックスに入ります。<br><br>
       上記の一連の流れで、今申請がどの状況にあるか、このアプリケーション1つですぐに把握することができます。
     </p>
+    <%= image_tag "ponyosky12.png", class:"how-to-pic" %>
   </section>
 <% end%>

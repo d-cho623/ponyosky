@@ -15,14 +15,6 @@
     <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "btn01" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "btn01"%></li>
-      <div class = "guest1">
-      <li><%= link_to 'ゲストログイン(一般ユーザー)', item_guest_sign_in_path, method: :post, class: "btn03" %>
-      <li><%= link_to 'ゲストログイン(課長)', item_guest2_sign_in_path, method: :post, class: "btn03" %>
-      </div>
-      <div class = "guest2">
-      <li><%= link_to 'ゲストログイン(発注グループ)', item_guest3_sign_in_path, method: :post, class: "btn03" %>
-      <li><%= link_to 'ゲストログイン(受入グループ)', item_guest4_sign_in_path, method: :post, class: "btn03" %>
-      </div>
     <% end %>
   </ul>
   </div>

@@ -1,0 +1,56 @@
+.user-edit {
+  width: 100%;
+  background-color: #2096f3;
+  color: #fff;
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+  margin-right: 35px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
+}
+
+.user-edit:hover {
+  background: #fff;
+  border: 1px solid #2096f3;
+  color: #2096f3;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
+}
+
+.user-destroy {
+  width: 100%;
+  background-color: #f53131;
+  color: #fff;
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 
+    background .15s ease,
+    border .15s ease,
+    color .15s ease
+  ;
+}
+
+.user-destroy:hover {
+  background: #fff;
+  color: #f53131;
+  border: 1px solid #f53131;
+  transition:
+    background .15s ease,
+    border .15s ease,
+    color .15s ease
+  ;
+}
