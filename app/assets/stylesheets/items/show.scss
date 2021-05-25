@@ -44,6 +44,24 @@
   border: 0;
   border-radius: 3px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+  text-decoration: none;
+  cursor: pointer;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
+}
+
+.item-destroy:hover {
+  border: 1px solid #f53131;
+  color: #f53131;
+  background: #fff;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
 }
 
 .item-edit {
@@ -55,6 +73,24 @@
   border-radius: 3px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
   margin-right: 35px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
+}
+
+.item-edit:hover {
+  background: #fff;
+  color: #2096f3;
+  border: 1px solid #2096f3;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
 }
 
 .approval-delete-btn {
@@ -66,6 +102,23 @@
   border-radius: 3px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
   margin-bottom: 20px;
+  cursor: pointer;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
+}
+
+.approval-delete-btn:hover {
+  background: #fff;
+  color: #f53131;
+  border: 1px solid #f53131;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
 }
 
 .approval-btn {
@@ -77,6 +130,23 @@
   border-radius: 3px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
   margin-bottom: 20px;
+  cursor: pointer;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
+}
+
+.approval-btn:hover {
+  background: #fff;
+  border: 1px solid #2096f3;
+  color: #2096f3;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
 }
 
 .reject-btn {
@@ -110,6 +180,12 @@
   border-radius: 3px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
   margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.top-page-btn:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
 }
 
 /* コメント表示のCSS */

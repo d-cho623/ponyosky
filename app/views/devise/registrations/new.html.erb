@@ -40,7 +40,7 @@
     <%= f.collection_select(:group_id, Group.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
   <div class="control">
-    <button type="submit">登録する</button>
+    <%= f.submit "登録する" ,class:"user-registration-btn" %>
   </div>
 <% end %>
 <%= button_to "トップページに戻る", root_path, method: :get, class: "top-page-btn2" %>

@@ -1,6 +1,6 @@
 .main {
   background: rgb(241, 223, 235);
-  background-image: image-url('ponyosky-2.jpeg');
+  background-image: image-url('ponyosky-8.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -8,27 +8,45 @@
 }
 
 .main-contents {
-  background-image: image-url('ponyosky-2.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
 }
 
 .title-contents {
   font-size: 20px;
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-around;
   padding: 5vh 15vw;
-  color: rgb(2, 6, 248);
+  color: rgb(228, 144, 133);
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   font-weight: 700;
+  font-family: 'Comic Sans MS';
 }
 
 .title-contents p {
   font-size: 30px;
+}
+
+.order-btn {
+  background: linear-gradient(110.85deg, #7080F7 0%, #4BA2D2 100.19%);
+  border-radius: 3rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2);
+  color: #fff;
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  padding: 1.5rem 5rem;
+  text-decoration: none;
+  margin-top: 50px;
+  // margin-left: 12rem;
+}
+
+.order-btn:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+  background: #7080F7;
 }
 
 .user-uid {
@@ -78,6 +96,7 @@ input[name="tab_item"] {
   padding: 40px 40px 0;
   clear: both;
   overflow: hidden;
+  padding-bottom: 100px;
 }
 
 
@@ -100,26 +119,16 @@ input[name="tab_item"] {
   background-color: cadetblue;
 }
 
-.order {
-  width: 500px;
-  margin: 0 auto 0px;
-  text-align: center;
-  padding: 10px;
-  border: 3px solid rgb(228, 152, 133);
-  font-size: 30px;
-  background-color: rgb(245, 226, 191);
-  border-radius: 0.2em;
-}
-
-.order-btn {
-  text-decoration: none;
-  color: black;
-}
-
-.order:hover {
-  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
-  border-color: transparent;
-}
+// .order {
+//   width: 500px;
+//   margin: 0 auto 0px;
+//   text-align: center;
+//   padding: 10px;
+//   border: 3px solid rgb(228, 152, 133);
+//   font-size: 30px;
+//   background-color: rgb(245, 226, 191);
+//   border-radius: 0.2em;
+// }
 
 .user-btn {
   display: flex;
@@ -149,6 +158,16 @@ input[name="tab_item"] {
 
 .item-lists {
   list-style: none;
+  text-decoration: none;
+}
+
+.item-list {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.item-list:hover{
+  color : #ff7043;
 }
 
 .item-data {
@@ -156,7 +175,7 @@ input[name="tab_item"] {
   border-left: solid 6px #2d8fdd;
   background: #f1f8ff;
   margin-bottom: 3px;
-   line-height: 1.5;
+  line-height: 1.5;
   padding: 0.5em;
   list-style-type: none!important;
 }
@@ -242,3 +261,105 @@ input[name="tab_item"] {
   margin-top: 20px;
 }
 /* ログインしていない場合の表示部分 */
+
+
+.wrapper {
+  height: 110vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: image-url('ponyosky-9.jpeg');
+  text-align: center;
+  padding-top: 10vh;
+  color: white;
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 7rem;
+  margin-bottom: 2rem;
+}
+
+.explain {
+  font-size: 20px;
+  margin-bottom: 80px;
+}
+
+.many-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.header-btn {
+  background: linear-gradient(110.85deg, #7080F7 0%, #4BA2D2 100.19%);
+  border-radius: 3rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2);
+  color: #fff;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  padding: 1.5rem 5rem;
+  text-decoration: none;
+}
+.header-btn:hover {
+  background: #7080F7;
+}
+
+#about {
+  height: 130vh;
+  background-image: linear-gradient(pink, purple);
+  padding: 1rem 1rem 2rem;
+}
+
+#about h2{
+  text-align: center;
+  color: white;
+  font-size: 5rem;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.explain2 {
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.about-pic {
+  width: 700px;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+#how-to {
+  height: 130vh;
+  background-image: linear-gradient(lime, green);
+  padding: 1rem 1rem 2rem;
+}
+
+#how-to h2 {
+  text-align: center;
+  color: white;
+  font-size: 5rem;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.how-to-text {
+  margin-left: 400px;
+}
+
+.how-to-pic {
+  width: 300px;
+  height: 200px;
+  text-align: right;
+  margin-left: 100px;
+}
+
+.explain3 {
+  padding-left: 3rem;
+  color: white;
+  font-size: 1.5rem;
+}
+

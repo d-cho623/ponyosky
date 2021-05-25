@@ -39,7 +39,7 @@ label {
   font-weight: bold;
 }
 
-button {
+.user-registration-btn {
   width: 100%;
   background-color: #2096f3;
   color: #fff;
@@ -47,6 +47,28 @@ button {
   border: 0;
   border-radius: 3px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+  cursor: pointer;
+  transition: 
+    background .15s ease,
+    border .15s ease,
+    color .15s ease
+    ;
+}
+
+.user-registration-btn:hover {
+  background: #fff;
+  border: 1px solid #2096f3;
+  color: #2096f3;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
+}
+
+.top-page-btn2:hover {
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
 }
 
 .select-box {

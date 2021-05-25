@@ -1,19 +1,20 @@
-<%= render "shared/header"%>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
+<%= render "shared/header"%>
+<% if user_signed_in?%>
 <div class='main'>
   <div class="main-contents">
     <div class='title-contents'>
       <h2 class='service-title'>
-        PONYOSKYで
+        PONYOSKYで<br><br>
+        物品の購入申請をしよう！
       </h2>
-      <p>物品の購入申請をしよう！</p>
-    </div>
     
-    <% if user_signed_in? %>
-      <div class="order">
+      <% if user_signed_in? %>
         <%= link_to '購入申請ページへ', new_item_path, class: "order-btn" %>
-      </div>
-    <% else %>
+    </div>
+      <% else %>
       <div class="user-btn">
         <div class="require-sign-in">
           <%= link_to 'ユーザー新規登録', new_user_registration_path, class: "sign-in-btn" %>
@@ -45,7 +46,7 @@
             <% @items.each do |item| %>
               <% unless item.approvals.present? || item.rejects.present?%>
                 <div class="item-data">
-                  <%= link_to item_path(item.id) do %>
+                  <%= link_to item_path(item.id) ,class:"item-list" do %>
                     <li class='item-name'>
                       <%= item.name %>
                     </li>
@@ -70,7 +71,7 @@
             <% @items.each do |item| %>
               <% if item.approvals.length == 1%>
                 <div class="item-data">
-                  <%= link_to item_path(item.id) do %>
+                  <%= link_to item_path(item.id), class:"item-list" do %>
                     <li class='item-name'>
                       <%= item.name %>
                     </li>
@@ -95,7 +96,7 @@
             <% @items.each do |item| %>
               <% if item.approvals.length == 2 && item.rejects.length == 0 %>
                 <div class="item-data">
-                  <%= link_to item_path(item.id) do %>
+                  <%= link_to item_path(item.id), class:"item-list" do %>
                     <li class='item-name'>
                       <%= item.name %>
                     </li>
@@ -120,7 +121,7 @@
             <% @items.each do |item| %>
               <% if item.approvals.length == 3 && item.rejects.length == 0 %>
                 <div class="item-data">
-                  <%= link_to item_path(item.id) do %>
+                  <%= link_to item_path(item.id),class:"item-list" do %>
                     <li class='item-name'>
                       <%= item.name %>
                     </li>
@@ -145,7 +146,7 @@
               <% @items.each do |item| %>
                 <% if item.rejects.length == 1%>
                   <div class="item-data">
-                    <%= link_to item_path(item.id) do %>
+                    <%= link_to item_path(item.id),class:"item-list" do %>
                       <li class='item-name'>
                         <%= item.name %>
                       </li>
@@ -214,3 +215,42 @@
     </ul>
   </div>
   <% end %>
+<% else %>
+  <section class = "wrapper">
+    <h1 class = "title">PONYOSKY</h1>
+    <p class = "explain">
+      会社内での購入申請を快適に。<br>
+      1ページで申請状況が確認できます。<br>
+      あなたの仕事も効率的に。
+    </p>
+    <div class="many-btn">
+        <%= link_to '新規登録', new_user_registration_path, class: "header-btn" %>
+        <%= link_to 'ログイン', new_user_session_path, class: "header-btn" %>
+    </div>
+  </section>
+
+  <section id ="about" class="wrapper2">
+    <h2>About</h2>
+    <p class ="explain2">
+      PONYOSKYは、会社内での購入申請を簡易化するアプリケーションです。<br>
+      購入申請から承認、発注、納品までの流れをこのアプリケーション1つで管理できます。<br>
+      今、発注から納品までの面倒な流れをアナログでやっているあなた！<br>
+      是非、PONYOSKYを使ってみよう！
+    </p>
+    <%= image_tag "ponyosky-10.webp", class:"about-pic" %>
+  </section>
+
+  <section id="how-to" class="wrapper3">
+    <h2 class ="how-to-text">HOW TO
+      <%= image_tag "ponyosky-11.webp", class:"how-to-pic" %>
+      </h2>
+    <p class="explain3">
+      ①購入申請を作成します。<br><br>
+      ②課長ユーザーは、購入申請に承認or却下をすることができます。<br><br>
+      ③承認された申請は、発注グループが発注処理をすることができます。<br><br>
+      ④発注処理がされると納入待ちとなり、納品後、受入グループは納入処理ができます。<br><br>
+      ⑤却下された申請は、却下ボックスに入ります。<br><br>
+      上記の一連の流れで、今申請がどの状況にあるか、このアプリケーション1つですぐに把握することができます。
+    </p>
+  </section>
+<% end%>

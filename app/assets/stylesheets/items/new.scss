@@ -55,6 +55,23 @@ label {
   border: 0;
   border-radius: 3px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+  cursor: pointer;
+  transition: 
+    background .15s ease,
+    border .15s ease,
+    color .15s ease
+    ;
+}
+
+.item-btn:hover {
+  background: #fff;
+  border: 1px solid #2096f3;
+  color: #2096f3;
+  transition: 
+  background .15s ease,
+  border .15s ease,
+  color .15s ease
+  ;
 }
 
 .top-page-btn2 {
@@ -66,4 +83,5 @@ label {
   border-radius: 3px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
   margin-bottom: 20px;
+  cursor: pointer;
 }
