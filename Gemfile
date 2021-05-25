@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.6'
@@ -60,3 +60,7 @@ gem 'active_hash'
 gem 'rails-i18n'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+
+group :production do
+  gem 'unicorn', '5.4.1' # バージョン指定
+end
