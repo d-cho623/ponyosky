@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    name { "アイウエオ" }
+    name { Faker::Name.last_name }
     maker { "株式会社abc" }
     number { 2234 }
     code { 2345 }
